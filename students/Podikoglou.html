@@ -1,0 +1,97 @@
+<!-- The general boilerplate of this file was written by Grigorios Kefalas and other students pages also share it. -->
+<!-- The content was written by Alexandros Podikoglou -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About Me - Alex</title>
+        <link rel="stylesheet" href="../newStyle.css">
+        <style>
+           header h1, header h2 {
+                font-weight: lighter;
+            }
+
+            header h1 {
+                font-size: 35px;
+                padding: 10px;
+            }
+
+            header h2 {
+                font-size: 24px;
+                font-style: oblique;
+            }
+
+            div {
+                padding: 8px;
+            }
+
+          
+            p {
+                line-height: 22px;
+            }
+
+            #main {
+                max-width: 740px; 
+                margin: auto;
+                padding: 15px; 
+            }
+
+            #info {
+              border: 3px dotted black;
+              /* actual background color: approx. #EAEAEA */
+              background-color: #E4E0E0;
+            }
+        </style>
+    </head>
+    <body>
+        
+    <header>
+        <h1>Welcome to CyberSecurity</h1>
+        <h2>Your Guide to Staying Safe Online</h2>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../html/Polychronis_protectionandtools.html">Protection and Tools</a>
+        <a href="../html/Bashllari.html">History of Cybersecurity</a>
+        <a href="../html/Glykidis_ThreatsAndVulnerabilities.html">Threats and Vulnerabilities</a>
+        <a href="../html/Podikoglou_PrivacyAndUserBehavior.html">Privacy and User Behavior</a>
+    </nav>
+    <div id="main">
+      <h1>hi, I'm alex.</h1>
+
+      <p>as for the obligatory information:</p>
+
+      <div id="info">
+        <p>my date of birth is <em>8th october 2005</em></p>
+        <p>that means by birthday is in <em id="birthday"></em> milliseconds</p>
+        <p>i am studying <em>computer science</em> (quite clearly)</p>
+        <p>i am interested in:</p>
+        <ul>
+          <li><a href="https://github.com/podikoglou">programming</a></li>
+          <li><a href="https://podikoglou.gr">writing</a></li>
+        </ul>
+
+        <p>you may donate to me using:</p>
+        <ul>
+          <li><strong>ethereum</strong>: 0x2187eAe889759C278680E3B97BeB254dD6f15AaA</li>
+          <li><strong>bitcoin</strong>: bc1qex47wytnd33k3zkxzgur36254avm6z3snllgw7</li>
+          <li><strong>solana</strong>: 13jaEmbUsCt8HGGNfDFYCFmffh3amAhkUPcGCzfayf8o</li>
+        </ul>
+
+      </div>
+    </div> 
+    <script>
+      const birthdayEl = document.getElementById('birthday');
+
+      const currentDate = new Date();
+      const birthday = new Date(currentDate.getFullYear(), 10, 8);
+
+      if (currentDate > birthday) {
+        birthday.setFullYear(birthday.getFullYear() + 1);
+      }
+
+      setInterval(() => {
+        birthdayEl.innerText = birthday - new Date();
+      }, 0);
+    </script>
+    </body>
+</html>

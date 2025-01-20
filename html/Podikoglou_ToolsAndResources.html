@@ -1,0 +1,298 @@
+<!-- Typeset by Alexandros Podikoglou, content partially written by GPT-4o and Claude 3.5 Sonnet -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../../newStyle.css" />
+    <link rel="stylesheet" href="Podikoglou_PrivacyAndUserBehavior.css" />
+
+    <style>
+      /* Tools and Resources specific styles */
+      #app-replacements {
+        margin: 20px 0;
+        list-style-type: none;
+      }
+
+      #app-replacements li {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+      }
+
+      #app-replacements a {
+        color: #007bff;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/html/Polychronis_protectionandtools.html"
+          >Protection and Tools</a
+        >
+        <a href="/html/Mateo_HistoryOfCyberSecurity.html"
+          >History of Cybersecurity</a
+        >
+        <a href="/html/Glykidis_ThreatsAndVulnerabilities.html"
+          >Threats and Vulnerabilities</a
+        >
+        <a href="/html/Podikoglou_PrivacyAndUserBehavior.html"
+          >Privacy and User Behavior</a
+        >
+      </nav>
+    </header>
+    <div class="grid">
+      <aside class="nav">
+        <ol>
+          <li><a href="Podikoglou_WhatIsPrivacy.html">What is Privacy?</a></li>
+          <li><a href="Podikoglou_YourData.html">Your Data</a></li>
+          <li><a href="Podikoglou_SocialMedia.html">Social Media</a></li>
+          <li><a href="Podikoglou_WhatYouCanDo.html">What you can do</a></li>
+          <li>
+            <a href="Podikoglou_ToolsAndResources.html">Tools and Resources</a>
+          </li>
+          <li>
+            <a href="Podikoglou_KnowYourRights.html">Know Your Rights!</a>
+          </li>
+        </ol>
+      </aside>
+
+      <main>
+        <article>
+          <h1>Tools and Resources</h1>
+
+          <h2>App Replacements</h2>
+          <p>
+            Many apps you may use are not very privacy friendly. Here are some
+            alternatives:
+          </p>
+
+          <ul id="app-replacements">
+            <!-- this is filled out by the script below -->
+          </ul>
+
+          <h1>Learning More: Trusted Privacy Organizations</h1>
+          <p>
+            For further resources, advocacy, and guidance on digital privacy,
+            visit these trusted organizations:
+          </p>
+          <ul>
+            <li>
+              <a href="https://www.eff.org"
+                >Electronic Frontier Foundation (EFF)</a
+              >
+            </li>
+            <li>
+              <a href="https://privacyinternational.org"
+                >Privacy International</a
+              >
+            </li>
+            <li><a href="https://securityinabox.org">Security in a Box</a></li>
+          </ul>
+
+          <h1>References</h1>
+          <ul>
+            <li><a href="https://www.privacytools.io">PrivacyTools</a></li>
+            <li>
+              <a href="https://www.privacyguides.org/en/tools/"
+                >Privacy Guides</a
+              >
+            </li>
+          </ul>
+        </article>
+      </main>
+    </div>
+
+    <script>
+      // writing some of the data in html form is not only tiring but also
+      // makes the code unmaintainable (i wrote used plain html at first,
+      // but it ended up having lines that were over 250 characters long
+      // and were tiring edit and debug)
+      //
+      // i present a solution: a combination of structured data
+      // (javascript objects) and this a of helper functions for working
+      // with the DOM. this is a tiny javascript framework in a sense. it
+      // was fun writing this, and i believe it has a lot of potential and
+      // could be extracted to an actual library.
+      //
+      // this funcion converts an array of strings into a grammatically
+      // formatted list, if that makes sense.
+      //
+      // example: (['a', 'b'], 'or') => 'a or b'
+      // example: (['a', 'b', 'c'], 'or') => 'a, b or b'
+      //
+      // example: (['a', 'b'], 'and') => 'a and b'
+      // example: (['a', 'b', 'c'], 'and') => 'a, b and b'
+      const formatList = (list, sep) => {
+        if (list.length == 1) {
+          return list[0];
+        } else {
+          let acc = "";
+
+          for (let i = 0; i < list.length; i++) {
+            acc += list[i];
+
+            if (i == list.length - 2) {
+              acc += " " + sep + " ";
+            } else if (i != list.length - 1) {
+              acc += ", ";
+            }
+          }
+
+          return acc;
+        }
+      };
+
+      // this is a very handy utility function for creating elements and injecting
+      // text into their innerText property. you can see below there's other
+      // functions built by composing it.
+      const makeEl = (el, text) => {
+        const element = document.createElement(el);
+        element.innerText = text;
+        return element;
+      };
+
+      const makeSpan = (text) => makeEl("span", text);
+      const makeStrong = (text) => makeEl("strong", text);
+      const makeAnchor = (text, url) => {
+        const element = makeEl("a", text);
+        element.href = url;
+        return element;
+      };
+      const makeReplacementAnchor = (replacement) =>
+        makeAnchor(replacement.name, replacement.url);
+
+      // this is a composable and modular function for inserting li elements in
+      // ul's about app replacements, which turns structured JSON data into HTML
+      // tags, formatting them properly.
+      const insert = (ul, { apps, replacements, extra }) => {
+        const li = document.createElement("li");
+
+        li.appendChild(makeSpan("Using "));
+        li.appendChild(makeStrong(formatList(apps, "or")));
+        li.appendChild(makeSpan("?"));
+
+        li.appendChild(makeSpan(" Use "));
+
+        if (replacements.length == 1) {
+          // if there's only a single replacement just add it directly
+          li.appendChild(makeReplacementAnchor(replacements[0]));
+        } else {
+          // if there's more than one then format them using actual grammatical structure
+          for (let i = 0; i < replacements.length; i++) {
+            li.appendChild(makeReplacementAnchor(replacements[i]));
+
+            if (i == replacements.length - 2) {
+              li.appendChild(makeSpan(" or "));
+            } else if (i != replacements.length - 1) {
+              li.appendChild(makeSpan(", "));
+            }
+          }
+        }
+
+        if (extra) {
+          extra.forEach((el) => li.appendChild(el));
+        }
+
+        ul.appendChild(li);
+      };
+
+      // Actual Data
+      //     \/
+      [
+        {
+          apps: ["Google Chrome"],
+          replacements: [
+            {
+              name: "Firefox",
+              url: "https://www.mozilla.org/en-US/firefox/new/",
+            },
+            { name: "Brave", url: "https://brave.com/" },
+          ],
+        },
+        {
+          apps: ["Google"],
+          replacements: [
+            { name: "DuckDuckGo", url: "https://duckduckgo.com/" },
+            { name: "Startpage", url: "https://startpage.com/" },
+          ],
+        },
+        {
+          apps: ["Gmail"],
+          replacements: [
+            { name: "Proton", url: "https://proton.me/" },
+            { name: "Startmail", url: "https://startmail.com/" },
+          ],
+          extra: [
+            makeSpan(" with "),
+            makeAnchor("PGP Encryption", "https://www.openpgp.org/"),
+          ],
+        },
+        {
+          apps: ["Google Maps"],
+          replacements: [
+            {
+              name: "OpenStreetMap",
+              url: "https://openstreetmap.org/",
+            },
+            { name: "Apple Maps", url: "https://apple.com/maps/" },
+          ],
+          extra: [
+            makeSpan(" (there's even a "),
+            makeAnchor("browser version", "https://beta.maps.apple.com/"),
+            makeSpan(")"),
+          ],
+        },
+        {
+          apps: ["WhatsApp", "Viber", "Messenger"],
+          replacements: [
+            { name: "Signal", url: "https://signal.org/" },
+            { name: "Telegram", url: "https://telegram.org" },
+          ],
+        },
+        {
+          apps: [
+            "Google Password Manager",
+            "writing your passwords out in a post-it that you stick to your monitor for everyone to see",
+          ],
+          replacements: [
+            { name: "Bitwarden", url: "https://bitwarden.com/" },
+            { name: "Proton Pass", url: "https://proton.me/pass" },
+            { name: "KeePassXC", url: "https://keepassxc.org" },
+          ],
+        },
+        {
+          apps: ["Google Authenticator"],
+          replacements: [
+            {
+              name: "Aegis Authenticator",
+              url: "https://getaegis.app/",
+            },
+            { name: "2FAS", url: "https://2fas.com/" },
+          ],
+        },
+        {
+          apps: ["Google Drive"],
+          replacements: [
+            { name: "Ente", url: "https://ente.io/" },
+            { name: "NextCloud", url: "https://nextcloud.com/" },
+            {
+              name: "iCloud with Encryption",
+              url: "https://icloud.com/",
+            },
+          ],
+        },
+      ].forEach((el) =>
+        insert(document.querySelector("#app-replacements"), el),
+      );
+    </script>
+  </body>
+</html>

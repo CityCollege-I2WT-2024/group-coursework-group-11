@@ -1,4 +1,4 @@
-Group Name   :
+Group Name   : CyberSecurity Team
 Website Title: CyberSecurity
 Group Leader : Kefalas Grigorios
 Group Member1: Glykidis Petros

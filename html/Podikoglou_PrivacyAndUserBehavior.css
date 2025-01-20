@@ -1,0 +1,27 @@
+/* Written by Alexandros Podikoglou */
+
+/* This is the grid that holds the layout of my webpages */
+/* It splits the page into two parts */
+.grid {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 300px 900px;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+/* This is the left part which is some sort of internal navigation */
+/* ("internal" refers to the fact that it acts as a navigation */
+/* between to MY webpages), it takes 300 out of the 1200 px */
+/* of the page. */
+aside .nav {
+  padding: 20px;
+  border-right: 1px solid black;
+}
+
+/* This is the main content of the page. It's on the right */
+/* of the internal navigation and takes 900 out of the */
+/* 1200 px of the page */
+main {
+  padding: 20px;
+}

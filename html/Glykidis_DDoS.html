@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!-- This file was created by Petros Glykidis -->
+<!-- References: https://www.imperva.com/learn/ddos/botnet-ddos/ -->
+<html>
+    <head>
+        <title>Botnet - DDoS</title>
+        <link rel="stylesheet" href="../newStyle.css">
+        <link rel="stylesheet" href="../Glykidis_global_style.css">
+        <style>
+            #ddos-example-price-image {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+                width: 700px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Sidebar navigation -->
+        <div class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="Glykidis_ThreatsAndVulnerabilities.html">Main Page</a></li>
+                <li><a href="Glykidis_Phishing.html">Phishing</a></li>
+                <li><a href="Glykidis_Viruses.html">Viruses</a></li>
+                <li class="current-page"><a href="Glykidis_DDoS.html">DDoS</a></li>
+                <li><a href="Glykidis_ResultsAndStatistics.html">Statistics</a></li>
+                <li id="AboutMeFix"><a href="../students/Glykidis.html">About Me</a>
+            </ul>
+        </div>
+
+        <!-- Main navigation-->
+        <header class="make-it-look-right">
+            <h1 id="banner">Threads and Vulnerabilities</h1>
+        </header>
+        <nav class="make-it-look-right">
+            <a href="../index.html">Home</a>
+            <a href="Polychronis_protectionandtools.html">Protection and Tools</a>
+            <a href="Bashllari_HistoryOfCyberSecurity.html">History of Cybersecurity</a>
+            <a href="Glykidis_ThreatsAndVulnerabilities.html">Threats and Vulnerabilities</a>
+            <a href="Podikoglou_PrivacyAndUserBehavior.html">Privacy and User Behavior</a>
+        </nav>
+
+        <main class="make-it-look-right">
+
+            <h1 id="title">Botnet DDoS Attacks</h1>
+
+            <br>
+
+            <h2>What is a botnet?</h2>
+
+            <p>Occasionally referred to as a “zombie army,” a botnet is a group of hijacked Internet-connected devices, each injected with malware used to control it from a remote location without the knowledge of the device’s rightful owner. From the point of view of hackers, these botnet devices are computing resources that can be used for any type of malicious purposes—most commonly for spam or DDoS attacks</p>
+
+            <p>An individual botnet device can be simultaneously compromised by several perpetrators, each using it for a different type of attack and often at the same time. For instance, a malware-infected personal computer could be ordered to rapidly access a website as part of a larger DDoS attack. At the same time it could also be performing vulnerability scans, with its owner browsing the web—unaware of both occurrences.</p>
+
+            <p><em><strong>“We have a Botnet army ready to take down your site. You have 48 hours to pay us 1200$. Merry Xmas!”</strong></em></p>
+
+            <h2>What is a DDoS attack?</h2>
+
+            <p>DDoS is an acronym for distributed denial of service. A DDoS attack is a malicious attempt to make a server or a network resource unavailable to users. It is achieved by saturating a service, which results in its temporary suspension or interruption.</p>
+
+            <p>A Denial of Service (DoS) attack involves a single machine used to either target a software vulnerability or flood a targeted resource with packets, requests or queries. A DDoS attack, however, uses multiple connected devices—often executed by botnets or, on occasion, by individuals who have coordinated their activity.</p>
+
+            <p>DDoS attacks can be divided into two general categories:</p>
+
+            <ol>
+                <li>
+                    <p>Application layer DDoS attack types include HTTP floods, slow attacks (Slowloris, RUDY), zero-day assaults, and those targeting vulnerabilities in operation systems, web applications and communication protocols.</p>
+
+                    <p>Comprised of seemingly legitimate and innocent requests, their magnitude usually being measured in requests per second (RPS), the goal of the attacks is to overwhelm a target application with requests. This causes high CPU and memory usage that eventually hangs or crashes the application.</p>
+                </li>
+                <li>
+                    <p>Network layer DDoS attack types include UDP floods, SYN floods, NTP amplification, DNS amplification, SSDP amplification, IP fragmentation and more.</p>
+
+                    <p>These are high-capacity barrages, measured in gigabits per second (Gbps) or packets per second (PPS). They’re almost always executed by botnets, with a goal of consuming the target’s upstream bandwidth, resulting in network saturation.</p>
+
+                    <p>It should be noted that DDoS attacks can also target supporting infrastructures and services—most commonly the target’s DNS servers. These can be over-encumbered with a flood of fabricated DNS requests, originating from botnet devices.</p>
+                </li>
+            </ol>
+
+            <h2>DDoS botnet and botnet tools</h2>
+
+            <p>The originator of a botnet is commonly referred to as a “bot herder,” or “botmaster.” This individual controls the botnet remotely, often through intermediate machines known as the command and control (C&C, or C2) servers.</p>
+
+            <p>To communicate with a C&C server, the botmaster uses various hidden channels, including seemingly innocuous protocols like IRC and HTTP websites, as well as popular services like Twitter, Facebook and even Reddit</p>
+
+            <p>Botnet servers are able to communicate and cooperate with other botnet servers, effectively creating a P2P network controlled by a single or multiple botmasters. This means that any given botnet DDoS attack may have multiple origins, or be controlled by multiple individuals—sometimes working in a coordinated manner, other times operating independently.</p>
+
+            <p>Botnets-for-hire are available from various sources, their services often being auctioned and traded among attackers. Online marketplaces have even sprung up—these are commercial entities trading in huge numbers of malware-infected PCs. They can be rented and used for DDoS or other attacks (e.g., brute force).</p>
+
+            <br>
+
+            <img src="../Photos/booter-prices-1.jpg" alt="DDoS example prices" id="ddos-example-price-image">
+            <span id="ddos-example-price-image">Typical DDoS stresser price list</span>
+
+            <br>
+
+            <p>These platforms, often hiding behind the ambiguous service definition of stressers, or booters, sell DDoS-as-a-service. They provide their clients with a richly-featured toolkit, as well as a distribution network, so as to execute their attacks on call.</p>
+
+            <p>Now armed with a rented botnet, DDoS attacks have become a viable (if criminal) and cost-effective option for anyone looking to take out a website or disturb communication of home and office networks. This results in a number of attack scenarios, ranging from shady businesses using DDoS to gain a competitive advantage to assaults in which DDoS becomes a tool of vandalism, revenge or simply a way to get some attention.</p>
+
+            <p>Full-service DDoS attacks are available for as little as $5 per hour, and the interested party can easily stretch their hour with a monthly plan that averages $38. Within the cybercrime ecosystem, botnet DDoS attacks are a mainstream commodity; prices continually drop, while efficacy and sophistication is constantly on the rise.</p>
+
+        </main>
+
+        <div class="button-container">
+            <button id="Previous-Button" onclick="location.href='Glykidis_Viruses.html'">
+                Back
+            </button>
+
+            <button id="Next-Button" onclick="location.href='Glykidis_ResultsAndStatistics.html'">
+                Next
+            </button>
+        </div>
+
+        <footer>
+            <a href="Kefalas_AboutUs.html" id="AboutUsFix">About Us</a>
+        </footer>
+    </body>
+</html>

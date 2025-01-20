@@ -1,15 +1,255 @@
+<!-- This code is developed by Grigorios Kefalas -->
 <!DOCTYPE html>
-<!-- Group name:
-     Group members:
--->
-<!-- developed by: -->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Group Coursework</title>
+    <title>CyberSecurity</title>
+    <!-- General CSS used -->
+    <link rel="stylesheet" href="newStyle.css"> 
+    <style>
+        /* Main CSS used for index.html */
+        header h1, header h2 {
+            font-weight: lighter;
+        }
+    
+        header h1 {
+            font-size: 35px; 
+            padding: 10px;
+        }
+    
+        header h2 {
+            font-size: 24px;
+            font-style: oblique;
+        }
+    
+        div {
+            padding: 8px;
+        }
+    
+        p {
+            line-height: 22px; 
+        }
+    
+        #main {
+            max-width: 1300px; 
+            margin: auto;
+            padding: 15px; 
+        }
+    
+        .dropdown {
+            border-radius: 8px;
+            background-color: #f6f6f6;
+            margin-bottom: 20px; 
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); 
+            padding: 2px;
+            width: 97%;
+            overflow: hidden; 
+            
+        }
+    
+        .dropdown h3 {
+            font-size: 25px;
+            padding: 3px 5px; 
+            cursor: pointer;
+            border-radius: 6px; 
+            text-align: center; 
+        }
+
+        .content {
+            display: block; 
+            text-align: justify;
+            padding-top: 6px;
+            font-size: 20px; 
+            opacity: 0;
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+        }
+    
+        .content.show {
+            opacity: 1; 
+            max-height: 200px; 
+        }
+    
+        .read-more {
+            margin-top: 6px; 
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    
+        .read-more:hover {
+            color: #0056b3;
+        }
+
+        .did-you-know {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333; 
+            text-align: center;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .stats-text {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .stats {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .stats p {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        .stats p span {
+            font-size: 26px;
+            color: #ff3333;  
+        }
+
+        .images {
+            width: 300px;
+            float: right;
+            margin-left: 20px;      
+            margin-bottom: 10px;  
+        }
+    </style>   
 </head>
+
 <body>
-    <p>Add your code here</p>
+    <header id="title">
+        <h1>Welcome to CyberSecurity</h1>
+        <h2>Your Guide to Staying Safe Online</h2>
+    </header>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="">Home</a>
+        <a href="html/Polychronis_protectionandtools.html">Protection and Tools</a>
+        <a href="html/Bashllari_HistoryOfCyberSecurity.html">History of Cybersecurity</a>
+        <a href="html/Glykidis_ThreatsAndVulnerabilities.html">Threats and Vulnerabilities</a>
+        <a href="html/Podikoglou_PrivacyAndUserBehavior.html">Privacy and User Behavior</a>
+    </nav>
+
+    <div id="main">
+        <p>The internet is a big part of our daily lives, helping us stay connected, learn new things, and get work done. From connecting with loved ones to accessing endless information, it has transformed the way we live. But with all its benefits come risks that can affect our personal information, money, and even our privacy. That's why understanding basic cybersecurity is so important for everyone who uses the internet. Think of it as learning to lock your doors and windows but for your digital life. This website is here to make cybersecurity simple and easy to understand for everyday internet users like you. You don't need to be a tech expert to take steps to protect yourself online, and we're here to show you how.</p>
+
+        <!-- Dropdown menu, when clicked the contents of the section appear -->
+        <h2>What You'll Discover:</h2>
+        <ul>
+            <section class="dropdown">
+                <li>
+                    <h3 onclick="toggleContent(this)">Protection and Tools</h3> <div class="content"> 
+                        <table>
+                            <tr>
+                                <td> Learn about simple ways to safeguard your online presence. Discover beginner-friendly tips, such as how to create strong passwords and spot fake websites. Explore easy-to-use tools like antivirus programs, password managers, and secure browsers that help protect your data from cyber threats. We'll show you how small changes can make a big difference in keeping your online identity secure. <a href="html/Polychronis_protectionandtools.html" class="read-more">Read more</a></td>
+                                <td> <img class="images" src="Photos/protection.jpg" alt="Protection-and-Tools"></div></td>
+                            </tr> 
+                        </table>
+                </li>
+            </section>
+
+            <section class="dropdown">
+                <li>
+                    <h3 onclick="toggleContent(this)">History of Cybersecurity</h3> <div class="content"> 
+                        <table>
+                            <tr>
+                                <td> Take a journey through time and see how cybersecurity has evolved. From the first viruses to today's efforts to combat cybercrime, learn why protecting digital systems has become so important. Discover fascinating stories, like how the first hackers changed technology forever, and how cybersecurity continues to adapt in the age of artificial intelligence. <a href="html/Bashllari_HistoryOfCyberSecurity.html" class="read-more">Read more</a> </td>
+                                <td> <img class="images" src="Photos/history.jpg" alt="History-of-Cybersecurity"></div> </td>
+                            </tr>
+                        </table>
+                </li>
+            </section>
+
+            <section class="dropdown">
+                <li>
+                    <h3 onclick="toggleContent(this)">Threats and Vulnerabilities</h3> <div class="content"> 
+                        <table>
+                            <tr>
+                                <td> Understand the most common risks to your online safety. From phishing emails to malware disguised as innocent links, we'll break down how these threats work and how to recognize them. Learn how cybercriminals exploit weaknesses like weak passwords, phishing scams, and outdated software—and how you can avoid falling victim. The more you know, the better prepared you'll be. <a href="html/Glykidis_ThreatsAndVulnerabilities.html" class="read-more">Read more</a> </td>
+                                <td> <img class="images" src="Photos/threats.png" alt="Threats-and-Vulnerabilities"></div> </td>
+                            </tr>
+                        </table>
+                </li>
+            </section>
+
+            <section class="dropdown">
+                <li>
+                    <h3 onclick="toggleContent(this)">Privacy and User Behavior</h3> <div class="content"> 
+                        <table>
+                            <tr>
+                                <td> Explore how your online activities can affect your privacy. Did you know that every like, share, or click you make online leaves a digital footprint? Get tips on protecting personal information, recognizing unsafe websites, and using social media responsibly to stay secure. We'll also cover how to manage privacy settings on popular platforms and reduce the data companies collect about you. <a href="html/Podikoglou_PrivacyAndUserBehavior.html" class="read-more">Read more</a> </td>
+                                <td> <img class="images" src="Photos/privacy.jpg" alt="Privacy-and-User-Behaviour"> </div> </td>
+                            </tr>
+                        </table>
+                </li>
+            </section>
+        </ul>
+        <p>Every day, hackers and scammers look for ways to trick people or steal personal information. They use clever tactics to make their scams look real, so it's important to stay alert. It's not just big companies or governments that are at risk—anyone who uses the internet can be a target. But the good news is that with a little knowledge and the right habits, you can avoid most of these problems and enjoy the internet safely. With cybersecurity, a little effort goes a long way.</p>
+
+        <h2>Who Is This Website For?</h2>
+
+        <p>This website is for everyone! Whether you're browsing social media, shopping online, or learning new things, you'll find tips and tools to help you stay safe. Whether you're a parent looking out for your kids online or someone new to technology, we've got you covered. We've kept the information simple, so no technical experience is needed.</p>
+
+        <p>Our mission is to empower you with the knowledge you need to stay safe in the digital world. Let's work together to make your online experience safer and more secure. Explore our website to learn easy ways to protect yourself and your loved ones online.</p>
+
+        <!-- Javascript introduced -->
+        <h2 class="did-you-know">Did you know...</h2>
+        <p class="stats-text">Since you have reloaded this page,</p>
+        <div class="stats">
+            <p><span id="accountsCreated">0</span> accounts have been created.</p>
+            <p><span id="hacked">0</span> websites have been hacked.</p>
+            <p><span id="cybercrime">0</span> individuals became victims of cybercrime.</p>
+        </div>
+            
+    </div>
+
+    <footer>
+        <a href="html/Kefalas_AboutUs.html">About Us</a>
+    </footer>
+
+    <script>
+        // This JavaScript counts the amount of accounts that are created, the websites that have been hacked and the number of victims since the page has been reloaded
+        var accountsCreated = document.getElementById("accountsCreated");
+        var countUp = function() {
+        var time = parseFloat(accountsCreated.textContent);
+        accountsCreated.textContent = time + 1;
+        };
+        var timer = window.setInterval(countUp, 100);
+
+        var hacked = document.getElementById("hacked");
+        var countUp2 = function() {
+            var time2 = parseFloat(hacked.textContent);
+            hacked.textContent = time2 + 1;
+        };
+        var timer2 = window.setInterval(countUp2, 3000);
+
+        var cybercrime = document.getElementById("cybercrime");
+        var countUp3 = function() {
+            var time3 = parseFloat(cybercrime.textContent);
+            cybercrime.textContent = time3 + 1;
+        };
+        var timer3 = window.setInterval(countUp3, 110);
+
+        // This JavaScript is used for the dropdown menu, checks if maxHeight has a value (which means that the content is visible) and collapses or expands the content accordingly
+        function toggleContent(h3Element) {
+            var contentDiv = h3Element.nextElementSibling;
+
+            if (contentDiv.style.maxHeight) {
+
+                contentDiv.style.maxHeight = null;
+                contentDiv.style.opacity = "0";
+            } else {
+                contentDiv.style.maxHeight = contentDiv.scrollHeight + "px"; 
+                contentDiv.style.opacity = "1";
+            }
+        }
+    </script>
 </body>
 </html>
