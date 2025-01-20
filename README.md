@@ -1,10 +1,10 @@
-Group Name   : CyberSecurity Team
-Website Title: CyberSecurity
-Group Leader : Kefalas Grigorios
-Group Member1: Glykidis Petros
-Group Member2: Podikoglou Iosif Akexandros
-Group Member3: Polychronis Polychronis
-Group Member4: Bashllari Mateo 
+Group Name   : CyberSecurity Team <br>
+Website Title: CyberSecurity <br>
+Group Leader : Kefalas Grigorios <br>
+Group Member1: Glykidis Petros <br>
+Group Member2: Podikoglou Iosif Akexandros <br>
+Group Member3: Polychronis Polychronis <br>
+Group Member4: Bashllari Mateo <br>
 
 ## Instructions:
 - clone this repo
